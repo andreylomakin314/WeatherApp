@@ -9,7 +9,7 @@ ____
 
 ## :link: Links     
 Django official site https://www.djangoproject.com/    
-Sqlite https://www.sqlite.org/index.html
+Sqlite https://www.sqlite.org/index.html    
 Study video https://www.youtube.com/watch?v=lsAbq2RcWlQ  
 ____
 ## 🔧 Requeriments
