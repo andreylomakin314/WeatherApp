@@ -6,7 +6,7 @@ from .forms import CityForm
 
 def index(request):
     appid = 'c9632f3223ad6db342a9cf1a41c5160c'
-    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&&units=metric&appid=' + appid
+    url = 'https://api.openweathermap.org/data/2.5/weather?q={}&&units=metric&appid=' + appid    # добавляем параметр &units для вывода температуры по Цельсию
 
     if (request.method == 'POST'):
         form = CityForm(request.POST)
@@ -18,8 +18,8 @@ def index(request):
     all_cities = []
 
     for city in cities:
-        res = requests.get(url.format(city.name)).json()
-        if res.get('main'):
+        res = requests.get(url.format(city.name)).json()    # форматируем название города в строку и конвертируем всю информацию в словарь
+        if res.get('main'):                                 # запрашиваем название города по ключу main в словаре с городами
             city_info = {
                 'city': city.name,
                 'temp': res["main"]["temp"],
@@ -28,7 +28,7 @@ def index(request):
             }
             if city_info not in all_cities:
                 all_cities.append(city_info)
-        else:
+        else:                                               # если город не найден выдаем сообщение об ошибке
             city_info = {
                 'city': city.name,
                 'error': True
