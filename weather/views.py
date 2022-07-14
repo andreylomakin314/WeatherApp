@@ -35,4 +35,4 @@ def index(request):
             }
             print('город не существует')
     context = {'all_info': all_cities, 'form': form}
-    return render(request, 'weather/index.html', context)
+    return render(request, 'weather/index.html', context)    # передаем параметры в html шаблон
