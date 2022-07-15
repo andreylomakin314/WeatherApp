@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render    # импортируем функцию которая объеденяет html шаблон со словарем
 from .models import City
 from .forms import CityForm
 
