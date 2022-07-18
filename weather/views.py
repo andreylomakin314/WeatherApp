@@ -12,7 +12,7 @@ def index(request):
         form = CityForm(request.POST)
         form.save()
 
-    form = CityForm()
+    form = CityForm()    # очищаем форму при перезагрузке страницы
 
     cities = City.objects.all()
     all_cities = []
